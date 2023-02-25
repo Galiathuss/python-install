@@ -80,3 +80,14 @@ pip3 --version
 
 一般安装到这里就结束了，具体参考：https://blog.csdn.net/qq_61313949/article/details/124144829
 后续还有错误处理和pipenv的安装
+
+
+### 卸载python
+```
+rpm -qa|grep python3|xargs rpm -ev --allmatches --nodeps       #卸载pyhton3
+whereis python3 |xargs rm -frv           #删除所有残余文件
+```
+成功卸载！
+```
+whereis   python       #查看现有安装的python
+```
