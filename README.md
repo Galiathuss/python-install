@@ -1,7 +1,7 @@
-# centos安装python3.9.5
+# centos安装python3.10.11
 
-### 为什么是3.9.5
-因为本地开发环境就是3.9.5，为了避免不必要的麻烦，保持环境一致
+### 为什么是3.10.11
+因为本地开发环境就是3.10.11，为了避免不必要的麻烦，保持环境一致
 ### 一定要全部看完一遍再进行安装
 ### 一定要全部看完一遍再进行安装
 ### 一定要全部看完一遍再进行安装
@@ -19,16 +19,16 @@ yum-builddep python
 ```
 
 ### 2.下载安装包
-```wget https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tgz```
+```wget https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz```
 
 ### 3.解压
-```tar -zxvf Python-3.9.5.tgz```
+```tar -zxvf Python-3.10.11.tgz```
 
 ### 4.创建编译安装目录
 ``mkdir /usr/local/python3``
 
 ### 5.安装
-```cd Python-3.9.12```
+```cd Python-3.10.11```
 
 第一个指定安装的路径,不指定的话,安装过程中可能软件所需要的文件复制到其他不同目录,删除软件很不方便,复制软件也不方便.
 
@@ -60,9 +60,9 @@ yum-builddep python
 相当于windows环境变量，如下写不会默认还是Python2.7，不需要修改yum配置。
 
 ```
-ln -sf /usr/local/python3/bin/python3.9 /usr/local/bin/python3
+ln -sf /usr/local/python3/bin/python3.10 /usr/local/bin/python3
 # 软链接至/bin/python3方便写脚本
-ln -s /usr/local/python3/bin/python3.9 /bin/python3
+ln -s /usr/local/python3/bin/python3.10 /bin/python3
 ln -sf /usr/local/python3/bin/pip3 /usr/local/bin/pip3
 ```
 如果建立时提示如下报错信息:
@@ -91,3 +91,12 @@ whereis python3 |xargs rm -frv           #删除所有残余文件
 ```
 whereis   python       #查看现有安装的python
 ```
+
+# Error处理
+
+1. pip install包的时候的时候报错
+```
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available
+```
+
+解决方案:https://stackoverflow.com/questions/56552390/how-to-fix-ssl-module-in-python-is-not-available-in-centos
