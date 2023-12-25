@@ -9,6 +9,21 @@
 
 ### 1.安装相应的编译工具
 建议在root下操作，会方便很多，一定要安装，否则编译安装会报错,这一步非常重要！
+
+#### 下面这两个必须单独执行,特别是SSl部分
+```
+sudo yum install -y epel
+sudo yum install -y openssl11-devel
+```
+如果安装epel显示`No package epel available`,则执行
+```
+$ yum search epel
+================================ N/S matched: epel ================================
+epel-release.noarch : Extra Packages for Enterprise Linux repository configuration
+
+$ yum install epel-release.noarch
+```
+
 ```
 yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
