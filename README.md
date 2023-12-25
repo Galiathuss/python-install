@@ -23,7 +23,7 @@ epel-release.noarch : Extra Packages for Enterprise Linux repository configurati
 
 $ yum install epel-release.noarch
 ```
-
+接着安装下面的依赖
 ```
 yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
