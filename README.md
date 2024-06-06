@@ -23,7 +23,9 @@ epel-release.noarch : Extra Packages for Enterprise Linux repository configurati
 
 $ yum install epel-release.noarch
 ```
-接着安装下面的依赖
+安装完SSL后查看openssl版本`openssl version`,如果版本低于1.1.1 大概率安装后会出错,推荐看最后的解决方案提前升级openssl
+
+接着安装下面的依赖,
 ```
 yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
@@ -118,5 +120,7 @@ pip is configured with locations that require TLS/SSL, however the ssl module in
 Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host='pypi.org', port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError("Can't connect to HTTPS URL because the SSL module is not available.",)) - skipping
 
 ```
+怀疑是centos7自带的openssl版本太低了,升级到1.1.1后正常
+解决方案:https://www.cnblogs.com/chenyishi/p/16220822.html
 
-解决方案:https://stackoverflow.com/questions/56552390/how-to-fix-ssl-module-in-python-is-not-available-in-centos
+参考:https://stackoverflow.com/questions/56552390/how-to-fix-ssl-module-in-python-is-not-available-in-centos
