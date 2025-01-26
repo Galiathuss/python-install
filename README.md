@@ -124,20 +124,3 @@ Could not fetch URL https://pypi.org/simple/pip/: There was a problem confirming
 解决方案:https://www.cnblogs.com/chenyishi/p/16220822.html
 
 参考:https://stackoverflow.com/questions/56552390/how-to-fix-ssl-module-in-python-is-not-available-in-centos
-
-
-## MAC安装
-
-### 1. 安装Xcode
-
-### 2. 安装Homebrew
-
-### 3. 用Homebrew 安装 pyenv
-
-### 4. 使用pyenv安装对应版本的python
-
-换源命令
-```bash
-v=3.10.11;wget https://mirrors.huaweicloud.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;pyenv install $v
-```
-
